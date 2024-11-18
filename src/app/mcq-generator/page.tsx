@@ -1,3 +1,5 @@
+import McqGenerator from '@/views/McqGenerator/McqGenerator';
+
 export default function page() {
-  return <div className='text-black text-8xl'>page</div>;
+  return <McqGenerator />;
 }

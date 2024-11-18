@@ -10,7 +10,7 @@ export default function ChatSidebar() {
             key={index}
             className='flex gap-2 items-center cursor-pointer hover:bg-orange-700 hover:rounded-lg px-2 py-1'
           >
-            <div className='text-white text-sm'>{item}</div>
+            <p className='text-white text-sm'>{item}</p>
           </div>
         );
       })}
