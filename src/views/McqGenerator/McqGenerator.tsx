@@ -10,7 +10,8 @@ import ChatResult from '@/shared/components/ChatResult/ChatResult';
 import { IMCQPayload } from '@/shared/types/MCQResponse';
 
 export default function McqGenerator() {
-  const { handleAnswers, mcqData, answers, handleSubmit } = useMcqGenerator();
+  const { handleAnswers, mcqData, answers, handleSubmit, isLoading } =
+    useMcqGenerator();
 
   return (
     <div className='p-5'>
@@ -22,6 +23,7 @@ export default function McqGenerator() {
               key={index}
               label={item.label}
               type={item.type}
+              disabled={isLoading}
               onChange={(value) => {
                 handleAnswers(item.key, value);
               }}
@@ -32,7 +34,11 @@ export default function McqGenerator() {
         })}
       </div>
       <div className='mt-5 text-center '>
-        <Button title='Generate' onClick={handleSubmit} />
+        <Button
+          title={isLoading ? 'Generating...' : 'Generate'}
+          disabled={isLoading}
+          onClick={handleSubmit}
+        />
       </div>
       <div
         className='mt-5 bg-[#0d1117] rounded-lg border border-slate-400 overflow-y-scroll h-[35vh]'

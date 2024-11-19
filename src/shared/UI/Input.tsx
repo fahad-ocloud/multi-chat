@@ -7,6 +7,7 @@ type IInput = {
   onChange: (value: string) => void;
   value: string | number;
   placeholder?: string;
+  disabled?: boolean;
 };
 
 export default function Input({
@@ -15,6 +16,7 @@ export default function Input({
   onChange,
   value,
   placeholder,
+  disabled = false,
 }: IInput) {
   return (
     <div className='w-full'>
@@ -22,6 +24,7 @@ export default function Input({
       <input
         className='border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2'
         placeholder={placeholder || ''}
+        disabled={disabled}
         type={type}
         defaultValue={value}
         value={value}
