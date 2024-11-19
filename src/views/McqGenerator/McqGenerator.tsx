@@ -46,6 +46,5 @@ export default function McqGenerator() {
 
 const scrollBarStyle: CSSProperties = {
   scrollbarWidth: 'none',
-  '-ms-overflow-style': 'none',
-  'scrollbar-width': 'none',
+  msOverflowStyle: 'none',
 };
