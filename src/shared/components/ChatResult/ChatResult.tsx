@@ -6,8 +6,14 @@ import { IMCQResponse } from '@/shared/types/MCQResponse';
 type IChatResult = {
   data: IMCQResponse[];
 };
+
 export default function ChatResult({ data }: IChatResult) {
   return (
-    <JsonView value={data} displayDataTypes={false} style={githubDarkTheme} />
+    <JsonView
+      value={data}
+      displayDataTypes={false}
+      style={githubDarkTheme}
+      shortenTextAfterLength={100}
+    />
   );
 }

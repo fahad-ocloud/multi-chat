@@ -1,4 +1,5 @@
 'use client';
+import { CSSProperties } from 'react';
 import ChatHeader from '@/shared/components/ChatHeader/ChatHeader';
 import Input from '@/shared/UI/Input';
 import React from 'react';
@@ -13,7 +14,7 @@ export default function McqGenerator() {
 
   return (
     <div className='p-5'>
-      <ChatHeader heading='AI MCQs Generator' />
+      <ChatHeader heading='AI MCQs JSON Generator' />
       <div className='flex gap-4'>
         {questions.map((item, index) => {
           return (
@@ -33,9 +34,18 @@ export default function McqGenerator() {
       <div className='mt-5 text-center '>
         <Button title='Generate' onClick={handleSubmit} />
       </div>
-      <div className='mt-5 bg-dark-200 rounded-lg border border-slate overflow-y-scroll h-[50vh]'>
+      <div
+        className='mt-5 bg-[#0d1117] rounded-lg border border-slate-400 overflow-y-scroll h-[35vh]'
+        style={scrollBarStyle}
+      >
         {mcqData && <ChatResult data={mcqData} />}
       </div>
     </div>
   );
 }
+
+const scrollBarStyle: CSSProperties = {
+  scrollbarWidth: 'none',
+  '-ms-overflow-style': 'none',
+  'scrollbar-width': 'none',
+};

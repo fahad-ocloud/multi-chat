@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 type IButton = {
@@ -10,7 +11,7 @@ export default function Button({ title, onClick, width = '30%' }: IButton) {
     <button
       type='button'
       onClick={onClick}
-      className={`w-[${width}] bg-gradient-to-r hover:from-teal-400 hover:to-blue-500 from-pink-500 to-orange-500 text-white font-bold py-2 px-4 rounded-xl`}
+      className={`w-[${width}] bg-[#720979] hover:bg-[#720979a1] text-white font-bold py-2 px-4 rounded-xl`}
     >
       {title}
     </button>

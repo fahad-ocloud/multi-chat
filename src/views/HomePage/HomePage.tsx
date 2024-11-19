@@ -1,17 +1,24 @@
+'use client';
+
+import Button from '@/shared/UI/Button';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 export default function HomePage() {
+  const router = useRouter();
+
   return (
-    <div className='flex flex-col justify-center items-center flex-grow gap-2'>
-      <div className='font-bold text-5xl'>Welcome to M U L T I C H A T !</div>
-      <div className='font-extralight text-2xl'>{`Let's start a conversation`}</div>
-      <button
-        type='button'
-        aria-label='Start a conversation'
-        className='bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-bold py-2 px-4 rounded-lg'
-      >
-        Get Started
-      </button>
+    <div className='flex flex-col justify-center items-center flex-grow gap-3 relative'>
+      <div className='font-bold text-3xl'>
+        Welcome to <span className='text-[#720979]'>M U L T I C H A T</span>
+      </div>
+      <div className='font-extralight text-lg'>{`Let's start a conversation`}</div>
+      <Button
+        title='Get Started'
+        onClick={() => {
+          router.push('/mcq-generator');
+        }}
+      />
     </div>
   );
 }
